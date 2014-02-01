@@ -1,5 +1,6 @@
 import math
 import random
+import matplotlib.pyplot as plt
 
 class ChaosGame:
 	def __init__(self, initial_point, ratio = 0.5, number_of_points = 3):
@@ -30,3 +31,9 @@ class ChaosGame:
 	def print_points(self):
 		for x in self.gen_points:
 			print(str(x[0]) + " | " + str(x[1]))
+
+	def plot_points(self):
+		for x in self.gen_points:
+			plt.plot([x[0]], [x[1]], 'ro')
+		plt.axis([0, 1, 0, 1])
+		plt.show()
