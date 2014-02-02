@@ -35,7 +35,7 @@ class ChaosGame:
 
 	def plot_points(self):
 		for x in self.gen_points:
-			plt.plot([x[0]], [x[1]], 'ro')
+			plt.plot([x[0]], [x[1]], 'r.')
 		plt.axis([0, 1, 0, 1])
 		plt.show()
 
