@@ -1,6 +1,7 @@
 import math
 import random
 import matplotlib.pyplot as plt
+import sys
 
 class ChaosGame:
 	def __init__(self, initial_point, ratio = 0.5, number_of_points = 3):
@@ -37,3 +38,15 @@ class ChaosGame:
 			plt.plot([x[0]], [x[1]], 'ro')
 		plt.axis([0, 1, 0, 1])
 		plt.show()
+
+if len(sys.argv) < 4:
+	print "Usage : python chaos.py [initial point ordinate] [initial point abcissa] [number of iterations] [value of r]"
+else:
+	init_point = (float(sys.argv[1]), float(sys.argv[2]))
+	if len(sys.argv) == 4:
+		c = ChaosGame(init_point)
+	else:
+		c = ChaosGame(init_point, float(sys.argv[4]))
+	
+	c.generate_points(int(sys.argv[3]))
+	c.plot_points()
